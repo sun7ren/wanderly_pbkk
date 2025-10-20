@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@plugin "daisyui";
+
+.swiper-slide img {
+  transition: all 0.3s ease-in-out;
+}
