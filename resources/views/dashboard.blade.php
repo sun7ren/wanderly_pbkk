@@ -53,5 +53,5 @@
         {{ $groups->links() }}
     </div>
 </div>
-<x-footer-home/>
 </x-app-layout>
+<x-footer-home/>
