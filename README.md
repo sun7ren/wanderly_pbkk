@@ -15,6 +15,11 @@ Wanderly is a website that allows users to create hangout groups, add members wi
 2. Chat components: DaisyUI https://daisyui.com/components/chat/
 3. Animations: AOS Library https://michalsnik.github.io/aos/
 
+## Frameworks
+1. Laravel Herd
+2. Laravel Breeze for Authentication
+
+   
 # Others
 
 
