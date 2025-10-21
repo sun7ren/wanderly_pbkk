@@ -11,12 +11,15 @@
             <div class="flex justify-between flex-row">
                 <h2 class="text-xl font-semibold mb-2">{{ $group->name }}</h2>
                 @if($group->user_id === Auth::id())
-                    <div class="space-x-2">
+                    <div class="gap-5 flex flex-column">
+                        <a href="{{ route('groups.edit', $group->id) }}" class="text-red-400 hover:text-red-800">
+                            <x-iconpark-edit class="w-7 h-7 fill-red-400 hover:fill-yellow-800"/>
+                        </a>
                         <form action="{{ route('groups.destroy', $group->id) }}" method="POST" class="inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-500 hover:underline">
-                                <x-ri-delete-bin-6-fill class="w-7 h-7 fill-red-400"/>
+                                <x-ri-delete-bin-6-fill class="w-7 h-7 fill-red-400 hover:fill-red-800"/>
                             </button>
                         </form>
                     </div>
