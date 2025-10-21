@@ -21,11 +21,6 @@
         </div>
 
         <div class="mb-4">
-            <label for="date" class="block font-medium text-gray-700">Date</label>
-            <input type="date" name="date" id="date" class="border rounded px-3 py-2 w-full" value="{{ $activity->date }}" required>
-        </div>
-
-        <div class="mb-4">
             <label for="start_time" class="block font-medium text-gray-700">Start Time</label>
             <input type="time" name="start_time" id="start_time" class="border rounded px-3 py-2 w-full" value="{{ $activity->start_time }}">
         </div>
@@ -40,7 +35,7 @@
             <input type="text" name="location" id="location" class="border rounded px-3 py-2 w-full" value="{{ $activity->location }}">
         </div>
 
-        <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-blue-600">
+        <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
             Update Activity
         </button>
     </form>

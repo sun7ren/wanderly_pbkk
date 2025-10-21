@@ -19,7 +19,6 @@ class ActivityFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
-            'date' => fake()->date(),
             'start_time' => fake()->time(),
             'end_time' => fake()->time(),
             'location' => fake()->address(),

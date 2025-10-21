@@ -23,11 +23,6 @@
         </div>
 
         <div class="mb-4">
-            <label for="date" class="block font-medium text-gray-700">Date</label>
-            <input type="date" name="date" id="date" class="border rounded px-3 py-2 w-full" required>
-        </div>
-
-        <div class="mb-4">
             <label for="start_time" class="block font-medium text-gray-700">Start Time</label>
             <input type="time" name="start_time" id="start_time" class="border rounded px-3 py-2 w-full"
                    min="{{ $overlapStart }}" max="{{ $overlapEnd }}" required>

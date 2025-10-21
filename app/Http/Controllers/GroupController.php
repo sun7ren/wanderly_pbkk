@@ -33,11 +33,13 @@ class GroupController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'date' => 'required|date'
         ]);
 
         Group::create([
             'name' => $request->name,
             'description' => $request->description,
+            'date' => $request->date,
             'user_id' => Auth::id(),
         ]);
 
@@ -63,9 +65,10 @@ class GroupController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'date' => 'required|date'
         ]);
 
-        $group->update($request->only('name', 'description'));
+        $group->update($request->only('name', 'description', 'date'));
         return redirect()->route('groups.show', $group->id)->with('success', 'Group updated successfully!');
     }
 

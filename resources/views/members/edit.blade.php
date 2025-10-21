@@ -25,7 +25,7 @@
             <input type="time" name="free_end" id="free_end" class="border rounded px-3 py-2 w-full" value="{{ $member->free_end }}">
         </div>
 
-        <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-blue-600">
+        <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
             Update Member
         </button>
     </form>

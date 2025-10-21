@@ -18,9 +18,10 @@ class GroupFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->title(),
+            'name' => fake()->name(),
             'description' => fake()->paragraph(),
             'user_id' => User::factory(),
+            'date' => fake()->dateTimeBetween('2025-01-01', '2030-12-31')->format('Y-m-d'),
         ];
     }
 }

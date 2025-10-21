@@ -19,6 +19,11 @@
             <textarea name="description" class="border rounded w-full p-2">{{ old('description') }}</textarea>
         </div>
 
+        <div>
+            <label for="date" class="block font-medium mb-1">Date:</label>
+             <input type="date" id="date" name="date" class="border rounded w-full p-2" value="{{ old('date') }}" required>
+        </div>
+
         <button type="submit" class="bg-[#B76A6A] text-white px-4 py-2 rounded-xl hover:bg-red-800">
             Create Group
         </button>

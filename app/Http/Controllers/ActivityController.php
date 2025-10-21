@@ -32,7 +32,6 @@ class ActivityController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'date' => 'required|date',
             'start_time' => 'required',
             'end_time' => 'required|after_or_equal:start_time',
             'location' => 'nullable|string|max:255',
@@ -42,7 +41,7 @@ class ActivityController extends Controller
         $group = Group::findOrFail($request->group_id);
         $this->RestrictOwner($group);
 
-        Activity::create($request->only('title', 'description', 'date', 'start_time', 'end_time', 'location', 'group_id'));
+        Activity::create($request->only('title', 'description', 'start_time', 'end_time', 'location', 'group_id'));
 
         return redirect()->route('groups.show', $group->id)->with('success', 'Activity created successfully!');
     }
@@ -60,13 +59,12 @@ class ActivityController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'date' => 'required|date',
             'start_time' => 'required',
             'end_time' => 'required|after_or_equal:start_time',
             'location' => 'nullable|string|max:255',
         ]);
 
-        $activity->update($request->only('title', 'description', 'date', 'start_time', 'end_time', 'location'));
+        $activity->update($request->only('title', 'description', 'start_time', 'end_time', 'location'));
 
         return redirect()->route('groups.show', $activity->group->id)->with('success', 'Activity updated successfully!');
     }

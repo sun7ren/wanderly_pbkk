@@ -11,6 +11,7 @@ class Group extends Model
         'name',
         'description',
         'user_id',
+        'date',
     ];
     /** @use HasFactory<\Database\Factories\GroupFactory> */
     use HasFactory;
