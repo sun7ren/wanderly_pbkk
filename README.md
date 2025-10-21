@@ -1,3 +1,19 @@
+**Youtube Submission Link:**  https://youtu.be/2MSasnt4nfc
+**Quick PPT Overview of the Project:** https://drive.google.com/file/d/1GjSIpKcN0uHPxHjxMujeYh4LT8NsNUaF/view?usp=sharing
+
+## About Wanderly 
+Wanderly is a website that allows users to create hangout groups, add members with their free time, and then create activities within the overlapping free time. It eases hangout scheduling without needing a back and forth messaging in regards to availability questioning. 
+
+# Database Structure
+<img width="645" height="407" alt="Screenshot 2025-10-21 at 5 48 27 PM" src="https://github.com/user-attachments/assets/7c4ebd2a-0446-4979-bf17-58417e28b31f" />
+
+- The relationship is as follows: Users can create many groups. Each group may have many members and many activities.
+
+# Frontend Sources 
+1. Carousel Infinite Scroll: https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/
+2. Chat components: DaisyUI https://daisyui.com/components/chat/
+3. Animations: AOS Library https://michalsnik.github.io/aos/
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
