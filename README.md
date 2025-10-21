@@ -15,6 +15,9 @@ Wanderly is a website that allows users to create hangout groups, add members wi
 2. Chat components: DaisyUI https://daisyui.com/components/chat/
 3. Animations: AOS Library https://michalsnik.github.io/aos/
 
+# Others
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -25,7 +28,7 @@ Wanderly is a website that allows users to create hangout groups, add members wi
 </p>
 
 
-# ----------------------------------------------------------- Others
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
