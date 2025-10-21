@@ -58,11 +58,11 @@
                     </div>
                     @if (Auth::id() === $group->user_id)
                         <div class="space-x-2">
-                            <a href="{{ route('activities.edit', $activity->id) }}" class="text-blue-500 hover:underline">Edit</a>
+                            <a href="{{ route('activities.edit', $activity->id) }}" class="text-red-400 hover:underline">Edit</a>
                             <form action="{{ route('activities.destroy', $activity->id) }}" method="POST" class="inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-red-500 hover:underline">Delete</button>
+                                <button type="submit" class="text-red-700 hover:underline">Delete</button>
                             </form>
                         </div>
                     @endif

@@ -6,6 +6,7 @@ use App\Models\Activity;
 use Illuminate\Http\Request;
 use App\Models\Group;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ActivityController extends Controller
 {
@@ -15,15 +16,14 @@ class ActivityController extends Controller
             $overlapStart = null;
             $overlapEnd = null;
         } else {
-            $overlapStart = $members = $group->members->min('free_start');
-            $overlapEnd = $members = $group->members->max('free_end');
+            $overlapStart = $members = $group->members->max('free_start');
+            $overlapEnd = $members = $group->members->min('free_end');
         }
         
         if ($overlapStart >= $overlapEnd) {
             $overlapStart = $overlapEnd = null;
         }
 
-        $this->RestrictOwner($group);
         return view('activities.create', compact('group', 'overlapStart', 'overlapEnd'));
     }
 

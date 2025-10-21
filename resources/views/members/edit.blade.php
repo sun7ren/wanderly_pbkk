@@ -1,6 +1,6 @@
 <x-app-layout>
 <div class="max-w-3xl mx-auto py-10">
-    <a href="{{ route('groups.show', $member->group->id) }}" class="text-indigo-600 hover:underline mb-4 inline-block">
+    <a href="{{ route('groups.show', $member->group->id) }}" class="text-yellow-600 hover:underline mb-4 inline-block">
         ← Back to {{ $member->group->name }}
     </a>
 
@@ -25,7 +25,7 @@
             <input type="time" name="free_end" id="free_end" class="border rounded px-3 py-2 w-full" value="{{ $member->free_end }}">
         </div>
 
-        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-blue-600">
             Update Member
         </button>
     </form>
