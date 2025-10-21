@@ -41,3 +41,4 @@
     </form>
 </div>
 </x-app-layout>
+<x-footer-home/>

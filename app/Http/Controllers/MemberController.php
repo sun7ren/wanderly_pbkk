@@ -20,17 +20,15 @@ class MemberController extends Controller
     {
         $this->RestrictOwner($group);
 
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'free_start' => 'required',
             'free_end' => 'required',
         ]);
 
-        Member::create([
-            'name' => $request->name,
-            'free_start' => $request->free_start, 
-            'free_end' => $request->free_end,
-            'group_id' => $group->id,]);
+        Member::create(array_merge($validated, [
+            'group_id' => $group->id,
+        ]));
 
         return redirect()->route('groups.show', $group->id)->with('success', 'Member added successfully!');
     }
@@ -45,13 +43,13 @@ class MemberController extends Controller
     {
         $this->RestrictOwner($member->group);
 
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'free_start' => 'required',
             'free_end' => 'required',
         ]);
 
-        $member->update($request->only('name', 'free_start', 'free_end'));
+        $member->update($validated);
 
         return redirect()->route('groups.show', $member->group->id)->with('success', 'Member updated successfully!');
     }

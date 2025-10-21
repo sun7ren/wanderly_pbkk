@@ -8,12 +8,6 @@ use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
-    public function index()
-    {
-        $users = User::with(['groups.members', 'groups.activities'])->get();
-        return view('dashboard', compact('users'));
-    }
-
     public function own()
     {
         $groups = Group::with(['members', 'activities'])
@@ -30,18 +24,15 @@ class GroupController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'date' => 'required|date'
         ]);
 
-        Group::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'date' => $request->date,
-            'user_id' => Auth::id(),
-        ]);
+        Group::create(array_merge($validated, [
+            'user_id' => Auth::id(),]
+        ));
 
         return redirect()->route('dashboard')->with('success', 'Group created successfully!');
     }
@@ -62,13 +53,13 @@ class GroupController extends Controller
     {
         $this->RestrictOwner($group);
 
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'date' => 'required|date'
         ]);
 
-        $group->update($request->only('name', 'description', 'date'));
+        $group->update($validated);
         return redirect()->route('groups.show', $group->id)->with('success', 'Group updated successfully!');
     }
 

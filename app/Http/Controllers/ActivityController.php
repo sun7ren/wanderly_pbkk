@@ -12,14 +12,10 @@ class ActivityController extends Controller
 {
     public function create(Group $group)
     {
-        if($group->user_id !== Auth::id()){
-            $overlapStart = null;
-            $overlapEnd = null;
-        } else {
-            $overlapStart = $members = $group->members->max('free_start');
-            $overlapEnd = $members = $group->members->min('free_end');
-        }
-        
+        $this->RestrictOwner($group);
+        $overlapStart = $group->members->max('free_start');
+        $overlapEnd = $group->members->min('free_end');
+
         if ($overlapStart >= $overlapEnd) {
             $overlapStart = $overlapEnd = null;
         }
@@ -27,9 +23,9 @@ class ActivityController extends Controller
         return view('activities.create', compact('group', 'overlapStart', 'overlapEnd'));
     }
 
-    public function store(Request $request, Group $group)
+    public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'start_time' => 'required',
@@ -38,10 +34,10 @@ class ActivityController extends Controller
             'group_id' => 'required|exists:groups,id',
         ]);
 
-        $group = Group::findOrFail($request->group_id);
+        $group = Group::findOrFail($validated['group_id']);
         $this->RestrictOwner($group);
 
-        Activity::create($request->only('title', 'description', 'start_time', 'end_time', 'location', 'group_id'));
+        Activity::create($validated);
 
         return redirect()->route('groups.show', $group->id)->with('success', 'Activity created successfully!');
     }
@@ -56,7 +52,7 @@ class ActivityController extends Controller
     {
         $this->RestrictOwner($activity->group);
 
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'start_time' => 'required',
@@ -64,7 +60,7 @@ class ActivityController extends Controller
             'location' => 'nullable|string|max:255',
         ]);
 
-        $activity->update($request->only('title', 'description', 'start_time', 'end_time', 'location'));
+        $activity->update($validated);
 
         return redirect()->route('groups.show', $activity->group->id)->with('success', 'Activity updated successfully!');
     }

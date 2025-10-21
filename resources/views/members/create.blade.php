@@ -1,5 +1,9 @@
 <x-app-layout>
 <div class="max-w-3xl mx-auto py-10">
+    <a href="{{ route('groups.show', $group->id) }}" class="text-red-700 hover:underline mb-4 inline-block">
+        ← Back to {{ $group->name }}
+    </a>
+    
     <h1 class="text-2xl font-bold mb-6">Add Member to {{ $group->name }}</h1>
 
     <form action="{{ route('members.store', $group->id) }}" method="POST">
@@ -25,3 +29,4 @@
     </form>
 </div>
 </x-app-layout>
+<x-footer-home/>

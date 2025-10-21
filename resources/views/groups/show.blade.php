@@ -39,7 +39,7 @@
     </div>
 
     {{-- Activities --}}
-    <div class="bg-white rounded-2xl shadow p-6">
+    <div class="bg-white rounded-2xl shadow p-6 mb-20">
         <h2 class="text-2xl font-semibold mb-4">Activities</h2>
         <ul class="space-y-3">
             @foreach ($group->activities as $activity)
@@ -81,3 +81,4 @@
     </div>
 </div>
 </x-app-layout>
+<x-footer-home/>

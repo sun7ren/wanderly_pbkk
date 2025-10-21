@@ -12,17 +12,17 @@
 
         <div class="mb-4">
             <label class="block font-medium mb-1">Group Name:</label>
-            <input type="text" name="name" value="{{ old('name') }}" class="border rounded w-full p-2" required>
+            <input type="text" name="name" value="{{ $group->name }}" class="border rounded w-full p-2" required>
         </div>
 
         <div class="mb-4">
             <label class="block font-medium mb-1">Description:</label>
-            <textarea name="description" class="border rounded w-full p-2">{{ old('description') }}</textarea>
+            <textarea name="description" class="border rounded w-full p-2">{{ $group->description }}</textarea>
         </div class="mb-4">
 
         <div class="mb-4">
             <label for="date" class="block font-medium mb-1">Date:</label>
-             <input type="date" id="date" name="date" class="border rounded w-full p-2" value="{{ old('date') }}" required>
+             <input type="date" id="date" name="date" class="border rounded w-full p-2" value="{{ $group->date }}" required>
         </div>
 
         <button type="submit" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
@@ -31,3 +31,4 @@
     </form>
 </div>
 </x-app-layout>
+<x-footer-home/>
