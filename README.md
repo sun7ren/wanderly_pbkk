@@ -1,15 +1,16 @@
 **Youtube Submission Link:**  https://youtu.be/2MSasnt4nfc
+
 **Quick PPT Overview of the Project:** https://drive.google.com/file/d/1GjSIpKcN0uHPxHjxMujeYh4LT8NsNUaF/view?usp=sharing
 
-## About Wanderly 
+# About Wanderly 
 Wanderly is a website that allows users to create hangout groups, add members with their free time, and then create activities within the overlapping free time. It eases hangout scheduling without needing a back and forth messaging in regards to availability questioning. 
 
-# Database Structure
+## Database Structure
 <img width="645" height="407" alt="Screenshot 2025-10-21 at 5 48 27 PM" src="https://github.com/user-attachments/assets/7c4ebd2a-0446-4979-bf17-58417e28b31f" />
 
 - The relationship is as follows: Users can create many groups. Each group may have many members and many activities.
 
-# Frontend Sources 
+## Frontend Sources 
 1. Carousel Infinite Scroll: https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/
 2. Chat components: DaisyUI https://daisyui.com/components/chat/
 3. Animations: AOS Library https://michalsnik.github.io/aos/
@@ -23,6 +24,8 @@ Wanderly is a website that allows users to create hangout groups, add members wi
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+# ----------------------------------------------------------- Others
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
