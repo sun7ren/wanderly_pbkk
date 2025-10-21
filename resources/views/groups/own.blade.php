@@ -24,6 +24,7 @@
                 @endif
             </div>
             <h3 class="text-lg font-medium mb-1">Description: {{ $group->description }}</h3>
+            <p class="text-gray-600 mb-2">Date: {{ $group->date }}</p>
             <p class="text-gray-600 mb-2">Owner: {{ $group->user->name }}</p>
             <p class="text-gray-500 mb-2">
                 Members: {{ $group->members->count() }} | Activities: {{ $group->activities->count() }}

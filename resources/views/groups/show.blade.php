@@ -50,9 +50,6 @@
                             Time: {{ $activity->start_time }} - {{ $activity->end_time }}
                         </span>
                         <span class="text-gray-600 block">
-                            Date: {{ $activity->date }}
-                        </span>
-                        <span class="text-gray-600 block">
                             Location: {{ $activity->location }}
                         </span>
                     </div>
